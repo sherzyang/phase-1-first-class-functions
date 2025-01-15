@@ -1,14 +1,17 @@
-function receivesAFunction(callback) {
-    return callback();
+const returnFirstTwoDrivers = function (names) {
+    return names.slice(0,2);
 }
 
-receivesAFunction(function(){return "I am stored in the callback varialbe!"});
-
-
-function returnsANamedFunction(){
-    return function fn(){};
-};
-
-function returnsAnAnonymousFunction() {
-    return function(){};
+const returnLastTwoDrivers = function(names) {
+    return names.slice(-2);
 }
+
+let selectingDrivers = [returnFirstTwoDrivers, returnLastTwoDrivers];
+
+function createFareMultiplier(integer) {
+    return function(fare) {integer * fare;}
+}
+
+// const fareDoubler = createFareMultiplier(2) 
+
+// const fareTripler = createFareMultiplier(3)
